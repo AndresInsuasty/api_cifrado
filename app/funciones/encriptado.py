@@ -1,6 +1,7 @@
 """
 Este modulo trabajará una encriptacion simetrica!
 """
+from cryptography.fernet import Fernet
 
 def encriptando_texto(mensaje:str,llave:str)->str:
     """
@@ -11,8 +12,6 @@ def encriptando_texto(mensaje:str,llave:str)->str:
     Retorna:
         - (str): Mensaje encriptado
     """
-    from cryptography.fernet import Fernet
-
     #llave = Fernet.generate_key()
     entorno_cifrado = Fernet(llave)
 
@@ -29,7 +28,6 @@ def desencriptando_texto(mensaje_encriptado:str,llave:str)->str:
     Returns:
         str: mensaje desencriptado
     """
-    from cryptography.fernet import Fernet
     entorno_cifrado = Fernet(llave)
     mensaje_desencriptado = entorno_cifrado.decrypt(mensaje_encriptado)
     return mensaje_desencriptado
