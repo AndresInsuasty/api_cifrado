@@ -16,7 +16,12 @@ from app.funciones.encriptado import desencriptando_texto
         (b"m3ns@j3 d3 pru3b4!!")
         ]
 )
-def test_desencriptando_texto(mensaje):
+def test_desencriptando_texto(mensaje:str):
+    """Funcion para probar la desencriptación
+
+    Args:
+        mensaje (str): Mensaje a ser encriptado y desencriptado con la funcion a probar
+    """
     llave = Fernet.generate_key()
     entorno_cifrado = Fernet(llave)
     mensaje_encriptado = entorno_cifrado.encrypt(mensaje)
