@@ -4,7 +4,7 @@ from app.funciones.hashing import text_hash
 
 
 @pytest.mark.parametrize(
-    "mensaje,hash",
+    "mensaje,hash_esperado",
     [
         ("Hola", "e633f4fc79badea1dc5db970cf397c8248bac47cc3acf9915ba60b5d76b0e88f"),
         ("A", "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd"),
@@ -21,7 +21,13 @@ from app.funciones.hashing import text_hash
         ),
     ],
 )
-def test_text_hash(mensaje,hash):
-    esperado_sha256 = hash
+def test_text_hash(mensaje:str,hash_esperado:str):
+    """Funcion para probar el hashing de texto
+
+    Args:
+        mensaje (str): Mensaje a ser hasheado
+        hash (str): el hash correspondiente al mensaje
+    """
+    esperado_sha256 = hash_esperado
     salida = text_hash(mensaje=mensaje)
     assert salida == esperado_sha256
