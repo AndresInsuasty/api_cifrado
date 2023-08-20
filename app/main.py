@@ -17,6 +17,9 @@ def home():
 def url_cifrado_cesar(texto,clave):
     """
     URL para hacer encriptado CESAR
+    Se debe ingresar el texto y la clave
+    texto (str)
+    clave (int)
     """
     salida = cifrado_cesar(texto,int(clave))
     return {"mensaje_cifrado":salida}
