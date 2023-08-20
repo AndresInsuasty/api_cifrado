@@ -3,12 +3,12 @@ Este modulo trabajará una encriptacion simetrica!
 """
 from cryptography.fernet import Fernet
 
-def encriptando_texto(mensaje:str,llave:str)->str:
+def encriptando_texto(mensaje:bytes,llave:bytes)->str:
     """
     Esta funcion hace un encriptado simetrico
     Parametros:
-        - mensaje (str): es el mensaje a ser encriptado
-        - llave (str): es la llave de encriptación
+        - mensaje (bytes): es el mensaje a ser encriptado
+        - llave (bytes): es la llave de encriptación
     Retorna:
         - (str): Mensaje encriptado
     """
